@@ -1,4 +1,4 @@
-import pytest
+import pytest, math
 from src.pricing import parse_price, format_currency, apply_discount, add_tax, bulk_total
 
 @pytest.mark.parametrize("text, expected", [
@@ -20,8 +20,9 @@ def test_apply_discount():
 def test_add_tax():
     with pytest.raises(ValueError):
         add_tax(40, -0.3)
-    assert add_tax(40) == 42.8
+    assert add_tax(30) == 32.1
 
 def test_bulk_total():
     prices = [12.02, 43.05, 10.06, 14.07]
+    assert bulk_total(prices, 3) == 82.20168
     
