@@ -9,3 +9,6 @@
 ## Question 2 Briefly explain pytest discovery (file/function naming) and what a fixture is.
 Pytest finds test files based on naming conventions automatically such as test_*.py or *_test.py, no manual registration is required.
 A fixture is a pre-setup function that provides data to tests to keep tests clean and repeatable. 
+
+## Pytest features used
+- @pytest.mark.parametrize in test_price.py
